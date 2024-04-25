@@ -14,13 +14,13 @@ import express from 'express'
  const app = express()
  const port = process.env.port || 8000
 
-//  const corsOptions = {
-//     origin: true
-//  }
-const corsOptions = {
-   origin: 'https://medicare-booking-frontend.vercel.app',
-   optionsSuccessStatus: 200
-};
+ const corsOptions = {
+    origin: true
+ }
+// const corsOptions = {
+//    origin: 'https://medicare-booking-frontend.vercel.app',
+//    optionsSuccessStatus: 200
+// };
 
  app.get('/', (req, res) =>{
     res.send("Api is working")
