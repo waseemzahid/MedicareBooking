@@ -17,11 +17,15 @@ import express from 'express'
 //  const corsOptions = {
 //     origin: true
 //  }
-const corsOptions = {
-   origin: 'https://medicare-booking-frontend.vercel.app',
-   optionsSuccessStatus: 200,
-   credentials: true,
-};
+// const corsOptions = {
+//    origin: 'https://medicare-booking-frontend.vercel.app',
+//    optionsSuccessStatus: 200,
+//    credentials: true,
+// };
+app.use(cors({
+   origin: '*',
+   credentials: true
+ }));
 
  app.get('/', (req, res) =>{
     res.send("Api is working")
@@ -46,6 +50,11 @@ const corsOptions = {
  app.use('/api/v1/doctors', doctorRoute)
  app.use('/api/v1/reviews', reviewRoute)
  app.use('/api/v1/bookings', bookingRoute)
+
+ app.use((req, res, next) => {
+   console.log('Incoming Request:', req.method, req.path);
+   next();
+ });
 
  app.listen(port, () =>{
     connectDB();
