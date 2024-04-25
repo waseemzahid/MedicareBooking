@@ -17,15 +17,11 @@ import express from 'express'
 //  const corsOptions = {
 //     origin: true
 //  }
-// const corsOptions = {
-//    origin: 'https://medicare-booking-frontend.vercel.app',
-//    optionsSuccessStatus: 200,
-//    credentials: true,
-// };
-app.use(cors({
-   origin: '*',
-   credentials: true
- }));
+const corsOptions = {
+   origin: 'https://medicare-booking-frontend.vercel.app',
+   optionsSuccessStatus: 200,
+   credentials: true,
+};
 
  app.get('/', (req, res) =>{
     res.send("Api is working")
