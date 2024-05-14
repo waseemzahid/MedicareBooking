@@ -15,8 +15,8 @@ const app = express()
 const port = process.env.PORT || 3000
 
 const corsOptions = {
-   origin: true,
-   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+   origin: "*",
+   methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
    credentials: true
 }
 
